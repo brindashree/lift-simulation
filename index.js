@@ -5,9 +5,6 @@ const firstFloor = document.querySelector("[data-floor-num='1']");
 const lifts = document.querySelectorAll(".lift");
 const floors = document.querySelectorAll(".floor");
 
-const upBtn = document.querySelector(".btn-up");
-const downBtn = document.querySelector(".btn-down");
-
 const liftsArray = Array(lifts);
 const floorsArray = Array(floors);
 
@@ -59,4 +56,3 @@ addEventListener("click", (e) => {
 
 addFloorBtn.addEventListener("click", handleAddFloor);
 addLiftBtn.addEventListener("click", handleAddLift);
-upBtn.addEventListener("click", handleLiftUp);
