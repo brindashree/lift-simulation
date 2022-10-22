@@ -38,9 +38,11 @@ body {
     background-color: darkblue;
     position: absolute;
     bottom: 0.5rem;
-    left: 6rem;
+    left: 12rem;
 }
 .add-floor-btn {
     background-color: darkcyan;
-    
+}
+.add-lift-btn {
+    background-color: darkcyan;
 }
