@@ -37,7 +37,7 @@ body {
     height: 7rem;
     background-color: darkblue;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0rem;
     left: 12rem;
 }
 .add-floor-btn {
@@ -45,4 +45,7 @@ body {
 }
 .add-lift-btn {
     background-color: darkcyan;
+}
+.change-lift-color {
+    background-color: orange;
 }

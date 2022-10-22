@@ -5,8 +5,8 @@ const firstFloor = document.querySelector("[data-floor-num='1']");
 const lifts = document.querySelectorAll(".lift");
 const floors = document.querySelectorAll(".floor");
 
-const liftsArray = Array(lifts);
-const floorsArray = Array(floors);
+const liftsArray = Array(...lifts);
+const floorsArray = Array(...floors);
 
 const handleAddFloor = () => {
 	if (floorsArray.length < 4) {
@@ -24,6 +24,7 @@ const handleAddFloor = () => {
 		floorsArray.push(newFloor);
 		newFloor.setAttribute("data-floor-num", floorsArray.length);
 	} else {
+		alert("Max floor limit reached");
 		addFloorBtn.disabled = true;
 	}
 };
@@ -37,14 +38,34 @@ const handleAddLift = () => {
 		newLift.style.left = `${liftMarginLeftDistance}rem`;
 		firstFloor.appendChild(newLift);
 	} else {
+		alert("Max lift limit reached");
 		addLiftBtn.disabled = true;
 	}
+};
+const getIdleLift = () => {
+	for (let i = 0; i < liftsArray.length; i++) {
+		if (!liftsArray[i].classList.contains("busy")) {
+			return liftsArray[i];
+		}
+	}
+	return null;
 };
 const handleLiftUp = (distance) => {
 	const transitionDistance =
 		parseInt(distance) == 1 ? 0 : (parseInt(distance) - 1) * 10;
-	lifts[0].style.bottom = `${transitionDistance}rem`;
-	lifts[0].style.transition = `2s linear`;
+	const lift = getIdleLift();
+	if (lift) {
+		lift.style.bottom = `${transitionDistance}rem`;
+		lift.style.transition = `2s linear`;
+		lift.classList.add("busy");
+		lift.classList.add("change-lift-color");
+		setTimeout(() => {
+			lift.classList.remove("busy");
+			lift.classList.remove("change-lift-color");
+		}, 10000);
+	} else {
+		alert("All lifts are busy");
+	}
 };
 addEventListener("click", (e) => {
 	if (e.target.dataset.upBtn) {
