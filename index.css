@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.floor{
+    height: 8rem;
+    border-bottom: 2px solid black;
+    position: relative;
+    margin-top: 2rem;
+}
+
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+.btn-up {
+    background-color: green;
+}
+
+.btn-down {
+    background-color: darkorange;
+}
+.lift {
+    width: 5rem;
+    height: 7rem;
+    background-color: darkblue;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 6rem;
+}
+.add-floor-btn {
+    background-color: darkcyan;
+    
+}
