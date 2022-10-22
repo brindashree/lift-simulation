@@ -49,3 +49,24 @@ body {
 .change-lift-color {
     background-color: orange;
 }
+h4{
+    text-align: center;
+    font-size: 1.5rem;
+    color: brown;
+    margin: 0.3rem;
+}
+.legend-idle {
+    background-color: darkblue;
+    height: 15px;
+    width: 15px;
+}
+.legend-busy {
+    background-color: orange;
+    height: 15px;
+    width: 15px;
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
